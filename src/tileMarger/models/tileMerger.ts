@@ -1,14 +1,12 @@
 import Jimp from 'jimp';
 const mergeTiles = async (target: string, ...files: string[]): Promise<void> => {
   const tiles: Promise<Jimp>[] = [];
-  console.log(files);
   for (let i = 0; i < files.length; i++) {
     //validate that all images are png
     if (!(files[i].endsWith('png') || files[i].endsWith('PNG'))) {
       throw new Error('all tiles must be png');
     }
     const tile = Jimp.read(files[i]);
-    console.log(tile);
     tiles.push(tile);
   }
   const loadedTiles = await Promise.all(tiles);
@@ -22,7 +20,6 @@ const mergeTiles = async (target: string, ...files: string[]): Promise<void> => 
 };
 
 const validate = (tiles: Jimp[]) => {
-  console.log(tiles.length);
   const minTiles = 2;
   if (tiles.length < minTiles) throw new Error('only 1 tile');
   const width = tiles[0].getWidth();
