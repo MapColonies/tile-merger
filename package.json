@@ -47,7 +47,7 @@
     "jimp": "^0.16.1",
     "js-yaml": "^3.14.1",
     "reflect-metadata": "^0.1.13",
-    "swagger-ui-express": "^4.1.5",
+    "swagger-ui-express": "^4.1.6",
     "tsyringe": "^4.4.0"
   },
   "devDependencies": {
